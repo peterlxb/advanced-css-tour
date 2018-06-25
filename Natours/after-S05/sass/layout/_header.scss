@@ -13,6 +13,10 @@
   // 裁剪一块区域
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
+  //在手机上裁剪的区域没那么大
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
   // class header__logo-box header__logo header__text-box
   //使用sass 嵌套Nesting
   &__logo-box {
