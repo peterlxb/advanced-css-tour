@@ -5,13 +5,23 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
-
   // 裁剪一块区域
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  // 高分辨率
+  @media (min-resolution: 192dpi) and (min-width: 37.5rem),
+    (min-width: 125rem) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+  }
 
   //在手机上裁剪的区域没那么大
   @include respond(phone) {
